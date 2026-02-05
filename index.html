@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="auth.js"></script>
     <style>
         :root {
             --primary: #00c853;
@@ -156,6 +157,29 @@
             border-radius: 12px;
             font-size: 0.75em;
             font-weight: 700;
+        }
+
+        .logout-btn {
+            margin: 12px 20px;
+            padding: 12px;
+            background: rgba(244, 67, 54, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .logout-btn:hover {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: var(--danger);
         }
 
         /* Main Content */
@@ -1079,6 +1103,12 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Logout Button -->
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </button>
         </div>
 
         <!-- Main Content -->
@@ -1100,12 +1130,11 @@
                                 <input type="checkbox" id="autoRefresh" onchange="toggleAutoRefresh()">
                                 <span class="slider"></span>
                             </label>
-                            <span class="auto-refresh-label">Auto-refresh</span>
+                            <span class="auto-refresh-label">Connect</span>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Content Wrapper -->
             <div class="content-wrapper">
                 <!-- Dashboard View -->
